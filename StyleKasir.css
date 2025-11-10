@@ -1,0 +1,115 @@
+body {
+    font-family: sans-serif;
+    background-color: #f4f7f6;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    margin: 0;
+}
+
+
+.container {
+    background-color: #ffffff; 
+    padding: 30px;
+    border-radius: 12px;
+    box-shadow: 0 6px 20px rgba(0, 0, 0, 0.08); 
+    width: 100%;
+    max-width: 400px; 
+    box-sizing: border-box;
+    margin: 20px;
+}
+
+
+h2 {
+    text-align: center;
+    color: #2c3e50; 
+    margin-top: 0;
+    margin-bottom: 25px;
+}
+
+
+.input-grup {
+    margin-bottom: 20px;
+}
+
+
+label {
+    display: block;
+    margin-bottom: 8px;
+    color: #555;
+    font-weight: 600; 
+    font-size: 0.9rem;
+}
+
+
+input[type="number"] {
+    width: 100%;
+    padding: 12px;
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    box-sizing: border-box; 
+    font-size: 1rem;
+    color: #333;
+}
+
+
+input[type="number"]:focus {
+    outline: none;
+    border-color: #007bff; 
+    box-shadow: 0 0 0 2px rgba(0, 123, 255, 0.2);
+}
+
+
+button {
+    width: 100%;
+    padding: 14px;
+    background-color: #007bff; 
+    color: white;
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+    font-size: 1rem;
+    font-weight: bold;
+    transition: background-color 0.3s ease, transform 0.1s ease; 
+}
+
+
+button:hover {
+    background-color: #0056b3; 
+}
+
+
+button:active {
+    transform: scale(0.99); 
+}
+
+
+#hasil {
+    margin-top: 25px;
+    padding-top: 20px;
+    border-top: 1px solid #eee; 
+}
+
+#hasil p {
+    margin: 10px 0;
+    font-size: 1rem;
+    color: #333;
+}
+
+
+#totalBelanja {
+    color: #555;
+}
+
+#infoDiskon {
+    color: #28a745;
+    font-weight: 500;
+}
+
+#totalBayar {
+    font-size: 1.3rem;
+    font-weight: bold;
+    color: #2c3e50;
+    text-align: right; 
+}

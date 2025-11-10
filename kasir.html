@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Program Kasir</title>
+    <link rel="stylesheet" href="StyleKasir.css">
+</head>
+<body>
+
+    <div class="container">
+        <h2>Kasir</h2>
+
+        <div class="input-grup">
+            <label for="harga">Harga Barang (Rp):</label>
+            <input type="number" id="harga" placeholder="Contoh: 50000">
+        </div>
+        <div class="input-grup">
+            <label for="jumlah">Jumlah Barang:</label>
+            <input type="number" id="jumlah" placeholder="Contoh: 3">
+        </div>
+
+        <button onclick="hitungTotal()">Hitung Total</button>
+
+        <div id="hasil">
+            <p id="totalBelanja"></p>
+            <p id="infoDiskon"></p>
+            <p id="totalBayar"></p>
+        </div>
+    </div>
+
+    <script>
+        function hitungTotal() {
+            
+            let harga = parseFloat(document.getElementById('harga').value);
+            let jumlah = parseFloat(document.getElementById('jumlah').value);
+
+            
+            if (isNaN(harga) || isNaN(jumlah) || harga <= 0 || jumlah <= 0) {
+                document.getElementById('totalBayar').textContent = "Masukkan harga dan jumlah yang valid.";
+                document.getElementById('totalBelanja').textContent = "";
+                document.getElementById('infoDiskon').textContent = "";
+                return; 
+            }
+
+            
+            let totalBelanja = harga * jumlah;
+
+            
+            let diskon = 0;
+            let pesanDiskon = "Diskon: Rp 0";
+
+            
+            if (totalBelanja > 100000) {
+                diskon = totalBelanja * 0.10;
+                pesanDiskon = "Diskon (10%): - Rp " + diskon.toLocaleString('id-ID');
+            }
+
+            
+            let totalBayar = totalBelanja - diskon;
+
+            
+            document.getElementById('totalBelanja').textContent = "Total Belanja: Rp " + totalBelanja.toLocaleString('id-ID');
+            document.getElementById('infoDiskon').textContent = pesanDiskon;
+            document.getElementById('totalBayar').textContent = "Total Bayar: Rp " + totalBayar.toLocaleString('id-ID');
+        }
+    </script>
+
+</body>
+</html>
